@@ -18,22 +18,5 @@ buildscript {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
     }
 }
-allprojects {
-    repositories {
-        maven {
-            url 'https://api.mapbox.com/downloads/v2/releases/maven'
-            authentication {
-                basic(BasicAuthentication)
-            }
-            credentials {
-                // Do not change the username below.
-                // This should always be `mapbox` (not your username).
-                username = 'mapbox'
-                // Use the secret token you stored in gradle.properties as the password
-                password = 'sk.eyJ1IjoibXVrZXNoYXJ5YWwiLCJhIjoiY20xZHFmcGt5MHN2YjJrc2F6cnozZGcwcCJ9.Q21dgxdA0FS9CYMSCjhIUw'
-            }
-        }
-    }
-}
 
 apply plugin: "com.facebook.react.rootproject"
