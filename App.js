@@ -15,13 +15,12 @@ import VideoPlayer from './components/VideoPlayer';
 import MeScreen from './components/MeScreen';
 import CameraScreen from './components/CameraScreen';
 
+
 const Stack = createStackNavigator();
 
 const App = () => {
 
   console.log("App component rendered!");
-
-	const [connectInfo, setConnectInfo] = useState(0);
 
   const [recorded, setRecorded] = useState(0);
 
@@ -39,12 +38,10 @@ const App = () => {
 			if(connected === true)
 			{
 				console.log("The Wifi was turned on!");
-				setConnectInfo(connectInfo => connectInfo + 1);
 			}
 			else
 			{
 				console.log("The Wifi was NOT turned on!");
-				setConnectInfo(connectInfo => connectInfo + 1);
 			}
 
 
@@ -60,7 +57,6 @@ const App = () => {
 
   } catch (error) {
     alert("Can't connect to the Information System.");
-    setConnectInfo(connectInfo => connectInfo + 1);
   }
 		}
 
@@ -68,7 +64,7 @@ const App = () => {
 
 useEffect(() => {
   connectToESP32();
-}, [connectInfo]);
+}, []);
 
 	const [user, setUser] = useState(null);
 
